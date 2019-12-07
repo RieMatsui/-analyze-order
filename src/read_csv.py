@@ -1,13 +1,10 @@
 import pandas as pandas
+from util import file_const
 
-pandas.set_option('display.max_columns', 50)
-
-customer_master = pandas.read_csv(
-    'nock/analyze_order/src/csv/customer_master.csv')
-item_master = pandas.read_csv('nock/analyze_order/src/csv/item_master.csv')
-transaction_1 = pandas.read_csv('nock/analyze_order/src/csv/transaction_1.csv')
-transaction_detail_1 = pandas.read_csv(
-    'nock/analyze_order/src/csv/transaction_detail_1.csv')
+customer_master = pandas.read_csv(file_const.const.CUSTOMER_MASTER)
+item_master = pandas.read_csv(file_const.const.ITEM_MASTER)
+transaction_1 = pandas.read_csv(file_const.const.TRANSACTION_1)
+transaction_detail_1 = pandas.read_csv(file_const.const.TRANSACTION_DETAIL_1)
 
 print(customer_master.head())
 print(len(customer_master))
