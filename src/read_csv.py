@@ -1,19 +1,16 @@
 import pandas as pandas
 from util import file_const
+from util import file_data
 
-customer_master = pandas.read_csv(file_const.const.CUSTOMER_MASTER)
-item_master = pandas.read_csv(file_const.const.ITEM_MASTER)
-transaction_1 = pandas.read_csv(file_const.const.TRANSACTION_1)
-transaction_detail_1 = pandas.read_csv(file_const.const.TRANSACTION_DETAIL_1)
+customer_master_file = file_data.file_data(file_const.const.CUSTOMER_MASTER)
+print(customer_master_file.get_file_head())
 
-print(customer_master.head())
-print(len(customer_master))
+item_master_file = file_data.file_data(file_const.const.ITEM_MASTER)
+print(item_master_file.get_file_head())
 
-print(item_master.head())
-print(len(item_master))
+transaction_1_file = file_data.file_data(file_const.const.TRANSACTION_1)
+print(item_master_file.get_file_head())
 
-print(transaction_1.head())
-print(len(transaction_1))
-
-print(transaction_detail_1.head())
-print(len(transaction_1))
+transaction_detail_1_file = file_data.file_data(
+    file_const.const.TRANSACTION_DETAIL_1)
+print(transaction_detail_1_file.get_file_head())
